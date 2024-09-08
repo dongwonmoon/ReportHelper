@@ -6,6 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
+driver = None
 
 def download_pdf(wrappers: list, processed_wrapper: set):
     """
@@ -26,7 +27,6 @@ def download_pdf(wrappers: list, processed_wrapper: set):
         else:
             print('pass')
     return processed_wrapper
-
 
 def check_recommend_thesis():
     global RECOMMEND_THESIS
@@ -56,12 +56,12 @@ def setup_driver(download_path):
     prefs = {
         "download.default_directory": str(download_path),
         "download.prompt_for_download": False,
-        "directory_upgrade": True
+        "download.directory_upgrade": True
     }
     
     chrome_options.add_experimental_option("prefs", prefs)
-    chrome_options.add_experimental_option("detach", True)
     
+    global driver
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
     return driver
 
@@ -84,7 +84,7 @@ def croling():
     global RECOMMEND_THESIS
     RECOMMEND_THESIS = True
 
-    while len(processed_wrapper) < 100:
+    while len(processed_wrapper) < 300:
         time.sleep(3)
         
         search_result_wrapper = driver.find_element(By.ID, 'searchResultList')
