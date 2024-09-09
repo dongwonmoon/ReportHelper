@@ -9,7 +9,6 @@ warnings.filterwarnings("ignore", category=FutureWarning)
 client = MongoClient('mongodb://localhost:27017/')
 db = client['report_helper_papers']
 collection = db['papers']
-collection_summarized = db['summarized']
 
 # 2. Pegasus 모델 및 토크나이저 로드
 tokenizer = PreTrainedTokenizerFast.from_pretrained('digit82/kobart-summarization')
