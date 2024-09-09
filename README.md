@@ -17,7 +17,7 @@ SNS에서의 개선된 소셜 네트워크 분석 방법
 과제를 위한 논문 -> 키워드 기반으로 내가 원하는 내용을 잘 찾기 힘듦.
 
 ### 데이터 출처
-DBpia -> 
+DBpia -> 산업공학 (이용순)
 
 ### 전체 과정 도식화
 ![ReportHelper](https://github.com/user-attachments/assets/de90f819-fae3-41fe-935f-9761dd8cd011)
