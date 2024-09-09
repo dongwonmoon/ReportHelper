@@ -1,2 +1,2 @@
 # ReportHelper
-Sementic Search
+Semantic Search
